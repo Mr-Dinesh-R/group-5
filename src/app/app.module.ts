@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { CarouselViewComponent } from './components/carousel-view/carousel-view.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { HttpClientModule } from '@angular/common/http';
 import { HeadersComponent } from './components/headers/headers.component';
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HeadersComponent } from './components/headers/headers.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
    // IvyCarouselModule
   ],
   providers: [],

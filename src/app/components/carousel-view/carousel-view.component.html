@@ -1,24 +1,28 @@
 
-   
-   <div class="Box"><div class="btn"> <button class="btn btn-primary btn-lg mx-4">Clear Filter</button>
-       <button class="btn btn-primary btn-lg" (click)="EditFilter()"><a routerLink="/filter">Edit Filter</a></button>
+   <div class="Box">
+
+    <div>
+        <div class="button3 "><b>FullName:</b></div>
+        <div class="button4 "><b>Phone:</b></div>
+        <div class="button5 "><b>Title:</b></div> 
+        <div class="button1 "><b>Clear Filter</b></div>
+       <div class=" button2" routerLink="/filter" ><b>Edit Filter</b></div>
     </div>
     </div>
     <section class="card">
        <div class="container-fluid" >
           <div class="slider-warp">
     <div class="slider-main" >
-     <div class="item" *ngFor="let emp of empObjs" >
+     <div class="item" *ngFor="let users of usersList" >
         <div> 
           <img src="/assets/images/female.jpg" width="150" height="110" style="vertical-align:middle; margin-top:10%;margin-left: 25%;margin-right: 50%;">
             <div class="container">
-                <strong>Emp Name:</strong>{{emp.ename}}<br>
-                <strong>Emp No:</strong>{{emp.empno}}<br>    
-                <strong>Job:</strong> {{emp.job}}<br>
-                <strong>salary:</strong>{{emp.sal}}<br>
-                <strong>Dept No:</strong>{{emp.deptno}}<br>
+                <strong> Name:</strong>{{users.fullName}}<br>
+                <strong>Title:</strong>{{users.title}}<br>    
+                <strong>Phone No:</strong> {{users.phoneNo}}<br>
                 <nav>
-                 <a routerLink="/users-details" (click)="expand()">expand btn</a>
+                    <!-- <mat-icon (click)="passDetails(users)">fullscreen</mat-icon> -->
+                    <mat-icon (click)="passDetails(users)">unfold_more</mat-icon>
                 </nav>
             </div>
         </div>
@@ -27,14 +31,15 @@
     </div>
     <div class="button-area"> 
         <!-- <mat-icon  [ngStyle]="prev?" appPrev>navigate_before</mat-icon> -->
-        <button class="prev" appPrev > prev </button>
-        <button class="next" appNext > > </button>
+        <button class="prev" appPrev ><b><a>&#8249;</a></b>  </button>
+        <!-- <i style='font-size:24px' class='fas'>&#xf424;</i> -->
+        <button class="next" appNext ><b><a>&#8250;</a></b>  </button>
     </div>
     </div>
 </section> 
- 
 
+<router-outlet></router-outlet>
   <!-- <a routerLink="/users">gotousers</a> <br> -->
 
 
-    <router-outlet></router-outlet>
+   

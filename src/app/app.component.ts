@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 
@@ -9,8 +10,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '11CarouselView';
- 
+  constructor(private router:Router){
+    this.loadHeader()
+  }
+ ngOnInit(): void{
 
+ }
+ loadHeader(){
+  this.router.navigate(["/header"])
+ }
 //  empObjs=[{  
 //     empno:101,
 //     ename:"Dhanush",

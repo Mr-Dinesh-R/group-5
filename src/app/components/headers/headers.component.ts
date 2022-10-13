@@ -6,15 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./headers.component.css']
 })
 export class HeadersComponent implements OnInit {
-  formFlag="carousel"
+  formFlag= "carousel" ;
+  saveDatails: any;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-expand(){
-  this.formFlag="users"
-}
-EditFilter(){
-  this.formFlag="filter"
-}
+  details(data:any)
+  {
+    console.log("header data: ", data);
+    this.saveDatails = data;
+    this.formFlag = "users-details"
+  }
+ 
 }

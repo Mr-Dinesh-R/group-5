@@ -1,6 +1,5 @@
 
-<div><button (click)="EditFilter()">EditFilter</button>
-<app-carousel-view  *ngIf="formFlag==='carousel'" (click)="expand()" ></app-carousel-view>
-<app-users-details *ngIf="formFlag==='users'" ></app-users-details>
-<app-filter *ngIf="formFlag==='filter'" ></app-filter>
+<div>
+<app-carousel-view  *ngIf="formFlag=='carousel'" (onPassDetailEmit)="details($event)"></app-carousel-view>
+<app-users-details *ngIf="formFlag=='users-details'" [users]="saveDatails" ></app-users-details>
 </div>
