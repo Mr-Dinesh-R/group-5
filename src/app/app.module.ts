@@ -12,6 +12,7 @@ import { CarouselViewComponent } from './components/carousel-view/carousel-view.
 import { FilterComponent } from './components/filter/filter.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeadersComponent } from './components/headers/headers.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { HeadersComponent } from './components/headers/headers.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
    // IvyCarouselModule
   ],
   providers: [],

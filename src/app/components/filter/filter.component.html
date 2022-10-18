@@ -2,19 +2,19 @@
    <h1 class="text-center"><b>Filter Model</b></h1>
 </div> 
 <div>
-   <div class="button11 "><b>Clear Filter</b></div>
-   <div class=" button21" (click)="ApplyFilter()"><b>Apply Filter</b></div>
+   <div class="button11 " (click)="clearFilter()"><b>Clear Filter</b></div>
+   <div class=" button21" (click)="applyFilter()"><b>Apply Filter</b></div>
 </div>
 <div>
 </div>
 <div class="container">
-   <form >
+   <!-- <form > -->
      <div class="row">
        <div class="col-25">
          <label for="fname">Full Name</label>
        </div>
        <div class="col-75">
-         <input type="text" id="fname" name="firstname" >
+         <input type="text" id="fname" name="firstname" [(ngModel)]="filterModel.fullName">
        </div>
      </div>
      <div class="row">
@@ -22,7 +22,7 @@
         <label for="fname">Title</label>
       </div>
       <div class="col-75">
-        <input type="text" id="fname" name="firstname">
+        <input type="text" id="fname" name="firstname"[(ngModel)]="filterModel.title">
       </div>
     </div>
     <div class="row">
@@ -30,7 +30,7 @@
         <label for="fname">Email</label>
       </div>
       <div class="col-75">
-        <input type="text" id="fname" name="firstname" >
+        <input type="text" id="fname" name="firstname" [(ngModel)]="filterModel.email" >
       </div>
     </div>
     <div class="row">
@@ -38,7 +38,7 @@
         <label for="fname">Phone</label>
       </div>
       <div class="col-75">
-        <input type="text" id="fname" name="firstname" >
+        <input type="text" id="fname" name="firstname" [(ngModel)]="filterModel.phone">
       </div>
     </div>
     <div class="row">
@@ -46,10 +46,10 @@
         <label for="fname">Status</label>
       </div>
       <div class="col-75">
-        <input type="text" id="fname" name="firstname" >
+        <input type="text" id="fname" name="firstname" [(ngModel)]="filterModel.status">
       </div>
    </div>
-   </form>
+   <!-- </form> -->
 </div>
    
     

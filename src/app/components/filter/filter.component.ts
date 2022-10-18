@@ -1,5 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserServiceService } from 'src/app/services/user-service.service';
+
 
 @Component({
   selector: 'app-filter',
@@ -8,13 +10,29 @@ import { Router } from '@angular/router';
 })
 export class FilterComponent implements OnInit {
   usersList:any=[];
+ 
+  filterModel: any={
+    fullName: '',
+    title:'',
+    email:'',
+    phone:'',
+    status: ''
+   }
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+             private userService:UserServiceService) { }
 
   ngOnInit(): void {
   }
-  ApplyFilter(){
-    console.log("hii");
-    this.router.navigate(["/carousel"]);
+  applyFilter(){ 
+    console.log(this.filterModel);
+     this.userService.filterModel={...this.filterModel};
+     this.userService.filterFlag="enabled"
+     this.router.navigate(["/carousel"]);
+  }
+  clearFilter(){
+    console.log("From clear filter");
+    this.userService.filterModel={};
+    this.userService.filterFlag="disabled"
   }
 }

@@ -5,6 +5,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserServiceService {
    usersList:any=[];
+   filterFlag="disabled"
+   filterModel: any={
+    fullname: '',
+    title:'',
+    email:'',
+    phoneNo:'',
+    status: ''
+   }
   constructor( private http:HttpClient) { }
 
   getAllUsers(){
@@ -12,5 +20,5 @@ export class UserServiceService {
     
     return this.http.get('http://localhost:5000/users')
   }
-
+  
 }
